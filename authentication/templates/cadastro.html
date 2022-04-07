@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'title' %}
+Cadastro | Control Jobs
+{% endblock %}
+{% block 'head' %}
+<link rel="stylesheet" href="{% static 'authentication/css/cadastro.css' %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+{% endblock %}
+
+{% block 'body' %}
+    <div class="box">
+        <div class="logoName">
+            <img src="{% static 'authentication/img/logo.png' %}" />
+   
+            <h2>Faça seu login na plataforma</2>
+        </div>
+        <div class="classForm">
+
+            <form action="{% url 'cadastro' %}"  method="POST"> {% csrf_token %}
+                
+                <br>
+                
+                <input type="text" name="username" placeholder="Nome de Usuário">
+                <br>
+                
+                <input type="password" name="password" placeholder="Sua Senha">
+                <br>
+                
+                <input type="password" name="confirm-password" placeholder="Confirmar sua senha">
+                <br>
+                <input  type="submit" value="Registrar" class="buttonAuth">
+                
+            </form>
+            <a href="#">Já é um cliente?</a> 
+        </div>
+            
+    </div>
+{% endblock %} 
