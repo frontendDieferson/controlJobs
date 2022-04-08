@@ -77,13 +77,21 @@
     color: #FFF;
     background-color: #6167FC;
     font-size: 16px;
-}
 
-.classForm a {
-    text-decoration: none;
+    
+}
+.buttonAuth:hover {
+    background-color: #363982;
+    transition: ease-in 0.9s;
+  
+}
+.classFormLink {
+    text-decoration: none !important;
     color: #FFF;
     align-items: center;
     margin-top: 8px;
     margin-left: 280px;
+   
 }
+
 

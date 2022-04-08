@@ -19,8 +19,14 @@ Cadastro | Control Jobs
             <h2>Faça seu login na plataforma</2>
         </div>
         <div class="classForm">
-
             <form action="{% url 'cadastro' %}"  method="POST"> {% csrf_token %}
+                            {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert {{message.tags}}">
+                                {{message}}
+                            </div>
+                        {% endfor %}
+                {% endif %}
                 
                 <br>
                 
@@ -35,7 +41,7 @@ Cadastro | Control Jobs
                 <button type="submit" class="buttonAuth">Registrar</button>
                 
             </form>
-            <a href="{% url 'login' %}">Já é um cliente?</a> 
+            <a class="classFormLink" href="{% url 'login' %}">Já é um cliente?</a> 
         </div>
             
     </div>
