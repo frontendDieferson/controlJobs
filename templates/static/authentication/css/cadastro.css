@@ -70,10 +70,12 @@
 
 
 .buttonAuth {
-    width: 220px;
-    height: 60px;
+    width: 400px;
+    height: 50px;
     border-radius: 8px;
-    color: #222;
+    border: 0;
+    color: #FFF;
+    background-color: #6167FC;
     font-size: 16px;
 }
 
