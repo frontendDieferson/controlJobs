@@ -85,13 +85,39 @@
     transition: ease-in 0.9s;
   
 }
-.classFormLink {
+.buttonLinks {
+    margin-top: 10px;
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.classFormLink:link {
     text-decoration: none !important;
     color: #FFF;
     align-items: center;
-    margin-top: 8px;
-    margin-left: 280px;
+    padding: 5px;
+    
+    
+    
    
+}
+.classFormLink:hover {
+    background-color: #000;
+    border-radius: 8px;
+    transition: ease-in 0.9s;
+  
+}
+.classFormLinkReset:link {
+    text-decoration: none !important;
+    color: #FFF;
+    align-items: center;
+    padding: 5px;
+}
+.classFormLinkReset:hover {
+    background-color: #000;
+    border-radius: 8px;
+    transition: ease-in 0.9s;
 }
 
 

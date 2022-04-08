@@ -27,7 +27,7 @@ def cadastro(request):
       user = User.objects.filter(username=username)
 
       if user.exists():
-        messages.add_message(request, constants.INFO, 'Já existe um usário com esse username')
+        messages.add_message(request, constants.INFO, 'Já existe um usuário com esse username')
         return redirect('/auth/cadastro')
 
       try:

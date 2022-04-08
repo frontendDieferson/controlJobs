@@ -10,7 +10,7 @@
         <div class="logoName">
             <img src="{% static 'authentication/img/logo.png' %}" />
    
-            <h2>Faça seu login na plataforma</2>
+            <h2>Faça seu login na plataforma</h2>
         </div>
         <div class="classForm">
 
@@ -31,7 +31,10 @@
                     <br>
                     <button type="submit" class="buttonAuth">Login</button>
                 </form>
-                <a class="classFormLink" href="{% url 'cadastro' %}">Cadastre-se</a> 
+                <div class="buttonLinks">
+                    <a class="classFormLinkReset" href="{% url 'password_reset' %}">Esqueci minha senha</a>
+                    <a class="classFormLink" href="{% url 'cadastro' %}">Cadastre-se</a> 
+                </div>
             </div>
             
     </div>
