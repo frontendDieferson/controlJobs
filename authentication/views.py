@@ -47,7 +47,7 @@ def cadastro(request):
 def login(request):
     if request.method == "GET":
       if request.user.is_authenticated:
-        return redirect('/dashboard')        
+        return redirect('/plataforma')        
       return render(request, 'login.html')
 
     elif request.method == "POST":
