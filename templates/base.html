@@ -1,43 +1,50 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+      <!doctype html>
+      <html lang="en">
+        <head>
+          <!-- Required meta tags -->
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
-    {% block 'head' %}
+          {% block 'head' %}
+          
 
-    
+          {% endblock %}
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+          <title>{% block 'title' %}{% endblock %}</title>
+        </head>
+        <body class="fundo">
 
-    {% endblock %}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-    <title>{% block 'title' %}{% endblock %}</title>
-  </head>
-  <body class="fundo">
+          {% if user.is_authenticated %}
+      <nav style="background-color: #444;" class="navbar navbar-expand-lg navbar-dark justify-content-between">
+      <a class="navbar-brand" href="#">
+        <span>Control | Jobs</span></a>
+      <button class="navbar-toggler" type="button" 
+              data-toggle="collapse" 
+              data-target="#navbarNav" 
+              aria-controls="navbarNav" 
+              aria-expanded="false" 
+              aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
 
-    {% if user.is_authenticated %}
-<nav style="background-color: #444;" class="navbar navbar-expand-lg navbar-dark">
-<a class="navbar-brand" href="#"><span class="font-degrade-nav">control | Jobs</span></a>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-<span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="navbarNav">
-<ul class="navbar-nav">
-<li class="nav-item active">
-<a class="nav-link" href="#">Encontrar job's</a>
-</li>
-</ul>
-</div>
-</nav>
-{% endif %}
+      <a class="nav-link" href="{% url 'encontrar_jobs' %}">Encontrar job's</a>
+      <a class="nav-link" href="{% url 'perfil' %}">Perfil</a>
+      </ul>
+    </div>
+    <a href="{% url 'editar_perfil' %}" class="btn btn-outline-info m-2">Editar Perfil</a>
+    <a href="{% url 'logout' %}" class="btn btn-outline-danger">Sair</a>
+      </nav>
+      {% endif %}
 
-    {% block 'body' %}{% endblock %}
+          {% block 'body' %}{% endblock %}
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" ></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" ></script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
-  </body>
-</html>
+        </body>
+      </html>
