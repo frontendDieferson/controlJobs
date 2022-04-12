@@ -8,15 +8,21 @@ class Referencias(models.Model):
     def __str__(self) -> str:
         return self.arquivo.url
 
+
 class Jobs(models.Model):
     categoria_choices = (('D', 'Design'),
-                         ('EV', 'Edição de Vídeo'))
+                         ('EV', 'Edição de Vídeo'),
+                         ('MD', 'Marketing Digital'),
+                         ('LP', 'Landing Page'))
+
+
+
     status_choices = (('C', 'Em criação'),
                       ('AA', 'Aguardando aprovação'),
                       ('F', 'Finalizado'))
     titulo = models.CharField(max_length=200)
     descricao = models.TextField()
-    categoria = models.CharField(max_length=2, choices=categoria_choices, default="D")
+    categoria = models.CharField(max_length=4, choices=categoria_choices, default='D')
     prazo_entrega = models.DateTimeField()
     preco = models.FloatField()
     referencias = models.ManyToManyField(Referencias)

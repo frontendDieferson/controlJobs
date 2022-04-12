@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% block 'title' %}
+Encontrar Jobs | Control Jobs
+{% endblock %}
 {% block 'head' %}
 
 <link rel="stylesheet" href="{% static 'jobs/css/encontrar_jobs.css' %}">
@@ -29,6 +31,7 @@
 
             <div class="col-sm">
                 <select class="form-control" name="categoria">
+                    <option value="S">Selecione</option>
                     <option value="D">Design</option>
                     <option value="EV">Edição de vídeo</option>
                     <option value="MD">Marketing Digital</option>
@@ -129,7 +132,14 @@
             
                                         <h6 class="titulo-body">Categoria:</h6>
             
-                                        <p>{{job.prazo_entrega}}</p>
+                                        <p>{% if job.categoria == 'D'%}
+                                            Design
+                                        {% else %}
+                                            Edição de vídeo
+                                        
+                                            Marketing Digital    
+                                            
+                                        {% endif%}</p>
             
                                     </div>
             
